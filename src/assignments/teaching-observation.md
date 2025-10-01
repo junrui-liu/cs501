@@ -16,7 +16,7 @@
 
 ### If you are a TA...
 
-By **Tuesday Nov 17**, use [this Google sheet](https://tinyurl.com/ta-obs) to kindly provide information on:
+By **Tuesday Oct 8**, use [this Google sheet](https://tinyurl.com/ta-obs) to kindly provide information on:
 - Your name & email
 - The course you're TA'ing for
 - Are you leading lab or discussion sections?
