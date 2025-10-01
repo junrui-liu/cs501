@@ -3,6 +3,23 @@
 The purpose of CS 501 is to prepare the Computer Science TAs for teaching in the classroom environment. TAs are not expected to have any prior teaching experience, so this course will help them achieve confidence in the classroom, grade equitably and efficiently, teach to various learning styles and establish their personal teaching philosophies. The course is given to both students who will be TAing concurrently in the fall quarter and those who hope to TA in the future.
 
 
+## Instructor
+
+> <br>
+> <img src="./junrui-profile.jpg" alt="junrui-profile" width="150"/>
+> 
+> **Junrui Liu** (he/him, first name is pronounced "June-ray")
+> 
+> 
+> I'm a 5th year PhD student in Computer Science. I'm also the Lead TA for the CS department this year, so please reach out to me if you have teaching-related questions or concerns.
+>
+> In my free time, I like playing music. I'm currently studying the [carillon](https://music.ucsb.edu/participate/ensembles/carillon) (you might catch me practicing on the Storke Tower over the quarter).
+>
+> **Email**: [junrui@ucsb.edu](mailto:junrui@ucsb.edu)
+> 
+> **Office hours**: TBD
+<!-- > - Tue, Wed, Thur, 2-3pm, Phelps 2510 -->
+<!-- > - Fri, 1-2pm, [Building 936 aka "TA trailer"](https://ucsb-cs8.github.io/w20/info/mentorPhotos/trailer-map.png) -->
 
 ## Requirements
 
