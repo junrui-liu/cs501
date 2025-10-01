@@ -1,0 +1,1 @@
+# (TA) Teaching Philosophy Statement

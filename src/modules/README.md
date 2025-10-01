@@ -5,9 +5,9 @@ Here's the tentative weekly schedule:
 
 | Week | Date  | Topic                                           |
 | ---- | ----- | ----------------------------------------------- |
-| 1    | 09/30 | [How to Design Your Lesson]()                   |
-| 2    | 10/07 | [How to Run Labs]()                             |
-| 3    | 10/14 | [Active Learning: Why & How]()                  |
+| 1    | 09/30 | [How to Design Your Lesson](week1.md)           |
+| 2    | 10/07 | [Active Learning: Why & How]()                  |
+| 3    | 10/14 | [How to Run Labs]()                             |
 | 4    | 10/21 | [How to Build Autograders]()                    |
 | 5    | 10/28 | [How to Make Great Slides]()                    |
 | 6    | 11/04 | [Crafting Your Teaching Philosophy Statement]() |
