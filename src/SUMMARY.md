@@ -3,7 +3,7 @@
 - [Syllabus](syllabus.md)
 - [Modules](modules/README.md)
   - [How to Design Your Lesson](modules/week1.md)
-  - [Active Learning: Why & How]()
+  - [Learning Objectives & Active Learning](modules/week2.md)
   - [How to Run Labs]()
   - [How to Build Autograders]()
   - [How to Make Great Slides]()
