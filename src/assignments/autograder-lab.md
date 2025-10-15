@@ -23,7 +23,7 @@ The goal of this lab is to teach you how to create and use simple autograders fo
 
 ### Task 1
 
-The autograder that Junrui just demo'ed in class is available [here](). 
+The autograder that Junrui just demo'ed in class is available [here](./autograder-lab/autograder_demo.zip). 
 
 Imagine that you're using this autograder for a homework assignment in a CS class for which you're a TA. One day before the assignment is due, you receive the following email complaint from a student:
 
