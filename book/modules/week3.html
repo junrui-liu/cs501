@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>[TA] Teaching Journal - CS 501 - Techniques of Computer Science Teaching</title>
+        <title>How to Build Autograders - CS 501 - Techniques of Computer Science Teaching</title>
 
 
         <!-- Custom HTML head -->
@@ -155,61 +155,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="teaching-journal"><a class="header" href="#teaching-journal">Teaching Journal</a></h1>
-<blockquote>
-<p><strong>Who</strong>: TAs</p>
-<p><strong>Deadline</strong>: Weekly, by Sunday 11:59pm</p>
-<p><strong>Estimated time</strong>: 5-10 minutes per week</p>
-</blockquote>
-<h2 id="why-junrui-wants-you-to-do-this"><a class="header" href="#why-junrui-wants-you-to-do-this">Why Junrui wants you to do this</a></h2>
+                        <h1 id="how-to-build-autograders"><a class="header" href="#how-to-build-autograders">How to Build Autograders</a></h1>
+<p>Ideas:</p>
 <ol>
-<li>Help you with time management!
-<ul>
-<li>TA’ing can eat up a TON of time if you’re not careful</li>
-<li>Make sure you’re not overworked by your instructor</li>
-</ul>
-</li>
-<li>Help you reflect on what you learned about teaching
-<ul>
-<li>Your weekly reflections are great fodder for your teaching philosophy statement!</li>
-</ul>
-</li>
+<li>Explain basics (setup.sh, run_autograder.sh, submission)</li>
+<li>Demo: adding more test cases + JSON output format (intentionally malformed JSON (no points associated with each test case))</li>
+<li>Demo: debugging malformed JSON</li>
+<li>Exercise: Students complain that there's no feedback. For each test case, show input, expected output, actual output
+<ol>
+<li>Reconvene and discuss my solutions</li>
 </ol>
-<h2 id="what-you-need-to-do"><a class="header" href="#what-you-need-to-do">What you need to do</a></h2>
-<p>Junrui will create a Canvas assignment for you to submit your journal entry every week. In your journal entry, please do the following two things:</p>
-<ol>
-<li>Log <strong>how much time</strong> you spent on <strong>what</strong> teaching-related duties. Be sure to include <em>all</em> teaching-related duties, including but not limited to:
-<ul>
-<li>Holding office hours</li>
-<li>Preparing for and running sections</li>
-<li>Answering student questions on Piazza or other Q&amp;A platforms</li>
-<li>Grading assignments</li>
-<li>Debugging autograders and student submissions</li>
-<li>Meeting with your instructor or fellow TAs</li>
-<li>Attending CS 501</li>
-<li>Slacking off because you don't wanna work on your research (just kidding)</li>
-</ul>
 </li>
-<li>Reflect on your experiences in the past week of teaching. Feel free to choose one or more <strong>prompts</strong> from the list below and respond to it. No need to write a full essay, just a few sentences is fine!
-<ul>
-<li>What went well in your teaching this week? What didn't go so well?</li>
-<li>What is something surprising/unexpected that happened in your section/office hours?</li>
-<li>What strategies have you tried, or want to try, in your teaching?</li>
-<li>How do you feel what you have learned in CS 501 so far can be applied to your teaching?</li>
-<li>What is one thing you want to improve in your teaching next week?</li>
-</ul>
-</li>
+<li>Hacking: hardcode test cases by repeatedly submitting</li>
+<li>Hacking: No longer show input, still show expected, stderr hacking</li>
+<li>Hacking: No longer show anything at all. Write to results/results.json directly</li>
+<li>Optional Exercise: Add timeout</li>
+<li>Optional Exercise: Add rate limiting</li>
+<li>Demo: using unittest + decorators instead of JSON</li>
 </ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../assignments/autograder-lab.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../modules/week2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../assignments/teaching-observation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../assignments/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -219,11 +192,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../assignments/autograder-lab.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../modules/week2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../assignments/teaching-observation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../assignments/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

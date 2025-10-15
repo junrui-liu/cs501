@@ -218,6 +218,24 @@
 <p><a href="https://docs.google.com/presentation/d/1MlFIoygXruIbUKYWg460La5JR5iKYlhiPUFiZih5zAM/edit?usp=sharing">Link</a></p>
 </blockquote>
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqjMF7ZcVhF0uHUgYzmZjTHmnQ6TteCU1MZ_nbumfzuafelnJUw6nyLcDiFBD9hDZ6hnqMeLjBRIS1/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-build-autograders"><a class="header" href="#how-to-build-autograders">How to Build Autograders</a></h1>
+<p>Ideas:</p>
+<ol>
+<li>Explain basics (setup.sh, run_autograder.sh, submission)</li>
+<li>Demo: adding more test cases + JSON output format (intentionally malformed JSON (no points associated with each test case))</li>
+<li>Demo: debugging malformed JSON</li>
+<li>Exercise: Students complain that there's no feedback. For each test case, show input, expected output, actual output
+<ol>
+<li>Reconvene and discuss my solutions</li>
+</ol>
+</li>
+<li>Hacking: hardcode test cases by repeatedly submitting</li>
+<li>Hacking: No longer show input, still show expected, stderr hacking</li>
+<li>Hacking: No longer show anything at all. Write to results/results.json directly</li>
+<li>Optional Exercise: Add timeout</li>
+<li>Optional Exercise: Add rate limiting</li>
+<li>Demo: using unittest + decorators instead of JSON</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="assignments"><a class="header" href="#assignments">Assignments</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="attend-a-cit-workshop"><a class="header" href="#attend-a-cit-workshop">Attend a CIT Workshop</a></h1>
 <blockquote>
@@ -274,7 +292,111 @@
 <ol class="footnote-definition"><li id="footnote-1">
 <p>Even if you just do research, you'll likely have to mentor people more junior than you, which is a form of teaching! <a href="#fr-1-1">↩</a></p>
 </li>
-</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="teaching-journal"><a class="header" href="#teaching-journal">Teaching Journal</a></h1>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="autograder-lab"><a class="header" href="#autograder-lab">Autograder Lab</a></h1>
+<blockquote>
+<p><strong>Who</strong>: Everyone</p>
+<p><strong>Deadline</strong>: Tuesday, Oct 14, 6:50PM</p>
+</blockquote>
+<p>The goal of this lab is to teach you how to create and use simple autograders for your assignments. By the end of this lab, you will be able to:</p>
+<ul>
+<li>Understand how autograders work under the hood, including how they are set up, executed, and how they report results.</li>
+<li>Create autograders that provide meaningful feedback to students while ensuring the integrity of the grading process.</li>
+<li>Diagnose, debug, and fix common issues that arise in autograder implementations.</li>
+</ul>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<ol>
+<li>
+<p>You should be automatically added to the <a href="https://www.gradescope.com/courses/1163414">Gradescope course for CS 501</a>. If you are not, please use the entry code GV4X2B.</p>
+</li>
+<li>
+<p>In this lab, you'll play the role of both a TA who writes autograders, and a student who submits assignments to be graded.</p>
+<ul>
+<li>Whenever you're asked to play the role of a student, you will submit to the CS 501 Gradescope course (that you just joined in step 1).</li>
+<li>Whenever you're asked to play the role of a TA, you will need to upload your autograder to a "dummy" Gradescope course that you create for yourself. We will provide instructions on how to do this later in the lab.</li>
+</ul>
+</li>
+<li>
+<p>Make sure you have <a href="https://xkcd.com/1987/">Python 3 installed on your machine</a>.</p>
+</li>
+</ol>
+<h2 id="what-you-need-to-do"><a class="header" href="#what-you-need-to-do">What You Need to Do</a></h2>
+<h3 id="task-1"><a class="header" href="#task-1">Task 1</a></h3>
+<p>The autograder that Junrui just demo'ed in class is available <a href="assignments/./autograder-lab/autograder_demo.zip">here</a>.</p>
+<p>Imagine that you're using this autograder for a homework assignment in a CS class for which you're a TA. One day before the assignment is due, you receive the following email complaint from a student:</p>
+<blockquote>
+<p>Hi <beloved TA>,</p>
+<p>I have been spending the whole weekend trying to debug my code, but I keep getting 0 points on Gradescope. Gradescope just tells me which test cases I failed, but it doesn't tell me what the expected output was, or what my code actually produced. Without that information, I can't figure out what went wrong. I think learning is all about getting feedback, and without feedback, I can't learn anything. Please fix this issue as soon as possible, because the assignment is due tomorrow and I really want to get some points on it. This assignment is creating a lot of stress for me, and I would really appreciate your help.</p>
+<p>Thanks a lot,
+<troubled student></p>
+</blockquote>
+<p>Knowing that being a TA is all about helping students learn, you decide to modify the autograder to provide more feedback to students. Specifically, you want to modify the autograder so that for each test case, it shows:</p>
+<ul>
+<li>The input that was provided to the student's code</li>
+<li>The expected output for that input</li>
+<li>The actual output produced by the student's code</li>
+</ul>
+<p>Update the demo autograder to provide the above feedback to students. You can do so by augmenting the JSON file that the autograder produces with an <code>output</code> field for each failed test case.</p>
+<p>To test your updated autograder, you will need to create a dummy Gradescope course for yourself, and upload your autograder to that course. Here are the steps to do so:</p>
+<ol>
+<li>Navigate to <a href="https://www.gradescope.com/">Gradescope</a>.</li>
+<li>Click "+ Create Course", pick any course number and name you like, and click "Create Course".</li>
+<li>Click on the course that you just created, and then click "Create Assignment".</li>
+<li>In the sidebar, select "Programming Assignment" as the assignment type, name the assignment "Test" (or any name you like), use 100 for autograder points, and pick any release &amp; due dates. Then click "Create Assignment".</li>
+<li>Once the assignment is created, navigate to "Configure Autograder" and click "Select Autograder (.zip)". This will open a file picker dialog. You need to select the <code>zip</code> file that contains your updated autograder. To create this <code>zip</code> file, Junrui wrote a simple <code>Makefile</code> that you can use (simply run <code>make</code> which will create a file called <code>autograder.zip</code> that you can upload to Gradescope). After selecting the <code>zip</code> file, click "Update Autograder".</li>
+</ol>
+<p>This sets up the autograder for all future submissions. To test it, you will now pretend you're a student and submit some code to be graded. You can do so by clicking "Test Autograder" button which is right next to "Update Autograder", and uploads the dummy <code>fib.py</code> file in the same directory as the autograder.</p>
+<h3 id="task-2"><a class="header" href="#task-2">Task 2</a></h3>
+<p>After updating the autograder, the student thanked you for your help. However, a few hours before the deadline, you noticed that some students are abusing the autograder as a debugging tool by repeatedly submitting their code to the autograder, checking the feedback, and using that feedback to fix their code. You turned a blind eye to this behavior until you discovered that one student simply hardcoded the test cases in their submission and got a perfect score without actually solving the problem.</p>
+<p>As a TA, do you think this is cheating? What would you do in this situation? Write down your thoughts.</p>
+<h3 id="task-3"><a class="header" href="#task-3">Task 3</a></h3>
+<p>After this incident, you come to appreciate the fine balance between providing meaningful feedback to students and ensuring the integrity and fairness of the grading process.</p>
+<p>To prevent further abuse, you decide to update the autograder again to provide just enough feedback so that students aren't completely stuck, but not too much feedback that they can easily game the system. To do so, update the autograder in the following way. Instead of displaying detailed information for each failed test case, the autograder now display the following summary information:</p>
+<pre><code>Passed: test_name_1, test_name_2, ...
+Failed: test_name_3, test_name_4, ...
+First failed test case:
+Expected: &lt;expected output&gt;
+Actual: &lt;actual output&gt;
+</code></pre>
+<p>Update the dummy assignment with your new autograder, and test it by submitting the same dummy <code>fib.py</code> file as before.</p>
+<h3 id="task-4"><a class="header" href="#task-4">Task 4</a></h3>
+<p>Since the autograder doesn't show the input for each test case anymore, it's impossible for students to hardcode the test cases in their submission anymore... <a href="https://www.youtube.com/watch?v=KF8wlNegMas">or is it?</a></p>
+<p>In this task, you will try to hack a similar autograder, and show that you can still hardcode the test cases in your submission and get a perfect score without actually solving the problem.</p>
+<p>Specifically, in the CS 501 Gradescope course, Junrui has created a dummy assignment called "Autograder Hacking (Task 4)". The autograder for this assignment accepts a <code>solution.py</code> file that must implement the following function:</p>
+<pre><code class="language-python">def foo(x: string) -&gt; int:
+    # Your code here
+</code></pre>
+<p>However, Junrui is not gonna tell you what <code>foo</code> is supposed to do. Your task is to achieve perfect score on this assignment without knowing what the autograder checks.</p>
+<details>
+<summary>Hint</summary>
+Submit a dummy file and observe the output of the autograder. 
+</details>
+<p>Once you complete this task, think about how you would prevent similar exploits in your own autograders.</p>
+<hr />
+<h3 id="task-5"><a class="header" href="#task-5">Task 5</a></h3>
+<p>After completing Tasks 4, you become disillusioned with autograders. You sense that no matter how hard you try to design a good autograder, a motivated student can always find a way to game the system. You decide to give up, become the bad guy, and provide no feedback in the autograder beyond printing out names of passed and failed test cases. After doing so, the Piazza forum is flooded with questions like this:</p>
+<blockquote>
+<p>Hi <beloved TA>,</p>
+<p>I can't pass <code>test_1</code>, <code>test_8</code>, and <code>test_10</code>. Can you please tell me what those tests are supposed to check? I really need to graduate this quarter and this is the last course I need to take.</p>
+<p>--Anonymous Poet</p>
+</blockquote>
+<p>Then, you spend tens of hours each week trying to distill the essence of each test case into a cryptic poem, hoping that the students will be able to decipher the poems and fix their code.</p>
+<p>The quarter passes, and you feel exhausted. You reflect on your experience, and wonder:</p>
+<blockquote>
+<p>Is this really what teaching is all about?</p>
+<p>Is this really what learning is all about?</p>
+<p>Why is testing so hard?</p>
+</blockquote>
+<p>Think about these questions, and write down your thoughts. Concretely, how would you design autograders that strike the right balance between providing meaningful feedback to students and ensuring the integrity of the grading process?</p>
+<h2 id="how-to-submit-your-work"><a class="header" href="#how-to-submit-your-work">How to Submit Your Work</a></h2>
+<p>Submit a zip file containing what you did for each task to the "Autograder Lab" assignment on Canvas. Your zip file should contain the following files:</p>
+<ul>
+<li><code>task1/</code>: A directory containing your updated autograder for Task 1.</li>
+<li><code>task2.txt</code>: A text file containing your thoughts for Task 2.</li>
+<li><code>task3/</code>: A directory containing your updated autograder for Task 3.</li>
+<li><code>solution_task4.py</code>: A Python file containing your solution for Task 4.</li>
+<li><code>task5.txt</code>: A text file containing your thoughts for Task 5.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="teaching-journal"><a class="header" href="#teaching-journal">Teaching Journal</a></h1>
 <blockquote>
 <p><strong>Who</strong>: TAs</p>
 <p><strong>Deadline</strong>: Weekly, by Sunday 11:59pm</p>
@@ -294,7 +416,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="what-you-need-to-do"><a class="header" href="#what-you-need-to-do">What you need to do</a></h2>
+<h2 id="what-you-need-to-do-1"><a class="header" href="#what-you-need-to-do-1">What you need to do</a></h2>
 <p>Junrui will create a Canvas assignment for you to submit your journal entry every week. In your journal entry, please do the following two things:</p>
 <ol>
 <li>Log <strong>how much time</strong> you spent on <strong>what</strong> teaching-related duties. Be sure to include <em>all</em> teaching-related duties, including but not limited to:
@@ -334,7 +456,7 @@
 <p>For TAs, this is a good source of feedback on your teaching from your homies. Normally you only get feedback from your students at the end of the quarter (and mid-quarter if you're lucky), which is often too late to be useful. But because the economy is so bad and there're so few of you who got TA positions, you'll likely have <em>several</em> non-TA peers observing your teaching and giving you feedback throughout the quarter. How great is that? :)</p>
 </li>
 </ul>
-<h2 id="what-you-need-to-do-1"><a class="header" href="#what-you-need-to-do-1">What you need to do</a></h2>
+<h2 id="what-you-need-to-do-2"><a class="header" href="#what-you-need-to-do-2">What you need to do</a></h2>
 <h3 id="if-you-are-a-ta"><a class="header" href="#if-you-are-a-ta">If you are a TA...</a></h3>
 <p>Use <a href="https://tinyurl.com/ta-obs">this Google sheet</a> to kindly provide information on:</p>
 <ul>
