@@ -158,7 +158,7 @@
                         <h1 id="autograder-lab"><a class="header" href="#autograder-lab">Autograder Lab</a></h1>
 <blockquote>
 <p><strong>Who</strong>: Everyone</p>
-<p><strong>Deadline</strong>: Tuesday, Oct 14, 6:50PM</p>
+<p><strong>Deadline</strong>: Tuesday, Oct 21, 6PM</p>
 </blockquote>
 <p>The goal of this lab is to teach you how to create and use simple autograders for your assignments. By the end of this lab, you will be able to:</p>
 <ul>
@@ -207,7 +207,7 @@
 <li>In the sidebar, select "Programming Assignment" as the assignment type, name the assignment "Test" (or any name you like), use 100 for autograder points, and pick any release &amp; due dates. Then click "Create Assignment".</li>
 <li>Once the assignment is created, navigate to "Configure Autograder" and click "Select Autograder (.zip)". This will open a file picker dialog. You need to select the <code>zip</code> file that contains your updated autograder. To create this <code>zip</code> file, Junrui wrote a simple <code>Makefile</code> that you can use (simply run <code>make</code> which will create a file called <code>autograder.zip</code> that you can upload to Gradescope). After selecting the <code>zip</code> file, click "Update Autograder".</li>
 </ol>
-<p>This sets up the autograder for all future submissions. To test it, you will now pretend you're a student and submit some code to be graded. You can do so by clicking "Test Autograder" button which is right next to "Update Autograder", and uploads the dummy <code>fib.py</code> file in the same directory as the autograder.</p>
+<p>This sets up the autograder for all future submissions. To test it, you will now pretend you're a student and submit some code to be graded. You can do so by clicking "Test Autograder" button which is right next to "Update Autograder", and uploads the dummy <code>solution.py</code> file in the same directory as the autograder.</p>
 <h3 id="task-2"><a class="header" href="#task-2">Task 2</a></h3>
 <p>After updating the autograder, the student thanked you for your help. However, a few hours before the deadline, you noticed that some students are abusing the autograder as a debugging tool by repeatedly submitting their code to the autograder, checking the feedback, and using that feedback to fix their code. You turned a blind eye to this behavior until you discovered that one student simply hardcoded the test cases in their submission and got a perfect score without actually solving the problem.</p>
 <p>As a TA, do you think this is cheating? What would you do in this situation? Write down your thoughts.</p>
@@ -220,7 +220,7 @@ First failed test case:
 Expected: &lt;expected output&gt;
 Actual: &lt;actual output&gt;
 </code></pre>
-<p>Update the dummy assignment with your new autograder, and test it by submitting the same dummy <code>fib.py</code> file as before.</p>
+<p>Update the dummy assignment with your new autograder, and test it by submitting the same dummy <code>solution.py</code> file as before.</p>
 <h3 id="task-4"><a class="header" href="#task-4">Task 4</a></h3>
 <p>Since the autograder doesn't show the input for each test case anymore, it's impossible for students to hardcode the test cases in their submission anymore... <a href="https://www.youtube.com/watch?v=KF8wlNegMas">or is it?</a></p>
 <p>In this task, you will try to hack a similar autograder, and show that you can still hardcode the test cases in your submission and get a perfect score without actually solving the problem.</p>

@@ -2,7 +2,7 @@
 
 > **Who**: Everyone
 >
-> **Deadline**: Tuesday, Oct 14, 6:50PM
+> **Deadline**: Tuesday, Oct 21, 6PM
 
 The goal of this lab is to teach you how to create and use simple autograders for your assignments. By the end of this lab, you will be able to:
 - Understand how autograders work under the hood, including how they are set up, executed, and how they report results.
@@ -48,7 +48,7 @@ To test your updated autograder, you will need to create a dummy Gradescope cour
 4. In the sidebar, select "Programming Assignment" as the assignment type, name the assignment "Test" (or any name you like), use 100 for autograder points, and pick any release & due dates. Then click "Create Assignment".
 5. Once the assignment is created, navigate to "Configure Autograder" and click "Select Autograder (.zip)". This will open a file picker dialog. You need to select the `zip` file that contains your updated autograder. To create this `zip` file, Junrui wrote a simple `Makefile` that you can use (simply run `make` which will create a file called `autograder.zip` that you can upload to Gradescope). After selecting the `zip` file, click "Update Autograder".
 
-This sets up the autograder for all future submissions. To test it, you will now pretend you're a student and submit some code to be graded. You can do so by clicking "Test Autograder" button which is right next to "Update Autograder", and uploads the dummy `fib.py` file in the same directory as the autograder.
+This sets up the autograder for all future submissions. To test it, you will now pretend you're a student and submit some code to be graded. You can do so by clicking "Test Autograder" button which is right next to "Update Autograder", and uploads the dummy `solution.py` file in the same directory as the autograder.
 
 
 ### Task 2
@@ -70,7 +70,7 @@ First failed test case:
 Expected: <expected output>
 Actual: <actual output>
 ```
-Update the dummy assignment with your new autograder, and test it by submitting the same dummy `fib.py` file as before.
+Update the dummy assignment with your new autograder, and test it by submitting the same dummy `solution.py` file as before.
 
 
 
@@ -98,7 +98,7 @@ Once you complete this task, think about how you would prevent similar exploits 
 ---
 
 
-### Task 6
+### Task 5
 
 After completing Tasks 4, you become disillusioned with autograders. You sense that no matter how hard you try to design a good autograder, a motivated student can always find a way to game the system. You decide to give up, become the bad guy, and provide no feedback in the autograder beyond printing out names of passed and failed test cases. After doing so, the Piazza forum is flooded with questions like this:
 > Hi <beloved TA>,
