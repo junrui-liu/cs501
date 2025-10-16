@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-
-# copy student submission to source directory
-cp /autograder/submission/solution.py /autograder/source/solution.py
-
-# run the autograder
-cd /autograder/source
-python3 run_tests.py > /autograder/results/results.json

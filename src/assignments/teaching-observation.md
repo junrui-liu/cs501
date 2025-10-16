@@ -33,6 +33,6 @@ Other than that, you don't need to do anything else. Just teach your section as 
 2. Please pick one TA's section to observe. You can pick any TA you want, and any section that fits your schedule.
 3. Please reach out to the TA (via email/discord/in person) to let them know that you'd like to observe their section, and confirm the day/time/location with them.
 4. Put your name on the sign-up sheet next to the TA's section that you're observing. We want to make sure that no section is overwhelmed with observers!
-5. On the day of the section, use [this TA observation form](https://drive.google.com/file/d/1d0IeOFE5Soyo-q8JPV8hFvtKkg9OkgjN/view?usp=sharing) to provide **constructive feedback** to the TA on their teaching. Please be kind and respectful in your feedback. Put yourself in their shoes: what kind of feedback would you want to receive if you were the TA?
+5. On the day of the section, use [this TA observation form](https://docs.google.com/document/d/14hyysr2nPwQHWHIm_jI6JR4pu8awx0g14399sLeZInc/edit?usp=sharing) to provide **constructive feedback** to the TA on their teaching. Please be kind and respectful in your feedback. Put yourself in their shoes: what kind of feedback would you want to receive if you were the TA?
 6. After the section, please send a copy of your filled-out observation form to the TA.
 7. Finally, upload the filled-out observation form to the corresponding Canvas assignment--this allows Junrui to keep track of who has completed the assignment.
