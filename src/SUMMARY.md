@@ -5,7 +5,7 @@
   - [How to Design Your Lesson](modules/week1.md)
   - [Learning Objectives & Active Learning](modules/week2.md)
   - [How to Build Autograders](modules/week3.md)
-  - [How to Run Labs]()
+  - [How to Support Students & Yourself](modules/week4.md)
   - [How to Make Great Slides]()
   - [Crafting Your Teaching Philosophy Statement]()
 - [Assignments](assignments/README.md)
