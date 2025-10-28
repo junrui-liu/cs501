@@ -14,4 +14,4 @@
   - [[TA] Teaching Journal](assignments/teaching-journal.md)
   - [[TA] Teaching Philosophy]()
   - [[Non-TA] Teaching Observation](assignments/teaching-observation.md)
-  - [[Non-TA] Micro-Teaching Demo]()
+  - [[Non-TA] Micro-Teaching Demo](assignments/micro-teaching-demo.md)
